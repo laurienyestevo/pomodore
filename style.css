@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+:root{
+    --button-reset:#bf950b;
+    --button-start:#2d8515;
+    --time:#7052c4;
+    --back-pomo: linear-gradient( #1CB5E0, #000046);
+    --back: #01015f;
+    --button-pomo:#b71313;
+    --pomo-sec: #3b60c6;
+    --title-primary:rgb(231, 226, 226);
+}
+body{
+    align-items: center;
+    display: flex;
+    font-family:'Prata', serif;
+    height: 100vh;
+    justify-content: center;
+    background: var(--back-pomo);
+   
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--back);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.card-header h1{
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--title-primary);
+}
+.card-header-buttons{
+    display: flex;
+    justify-content: stretch;
+    gap: 10px;
+    padding: 4px;
+}
+.card-header-buttons button{
+    padding: 8px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    background-color:var(--pomo-sec) ;
+    color: var(--title-primary);
+}
+.card-header-buttons .active{
+    background-color: var(--button-pomo);
+}
+.card-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+}
+.progress-bar{
+    height: 180px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:conic-gradient(var(--time) 360deg, var(--button-pomo) 0deg);
+    border-radius: 50%;
+    animation: pulse  3s infinite;
+    transition:all ease ;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px , 
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px ,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset; 
+
+}
+.progress-bar-inner{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--back);
+    border-radius: 50%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.progress-bar-inner h2{
+    color: var(--title-primary);
+    font-weight: 900;
+    font-size: 40px;
+}
+.card-footer{
+    display: flex;
+    justify-content: stretch;
+    gap: 20px;
+}
+.card-footer button{
+    padding: 10px 12px;
+    border-radius: 6px;
+    background-color: var(--button-reset);
+    color: var(--title-primary);
+    font-weight: 900;
+    font-size: 14px;
+}
+.card-footer .btn-sucess{
+    background-color: var(--button-start);
+}
+.card-footer .btn-danger{
+    background-color: var(--button-pomo) ;
+}
+@keyframes pulse{
+    0%{
+        transform: scale(0.97);
+        box-shadow:0 0 0 0 rgba(52, 172, 224, 0.7);
+    }
+    50%{
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+    }
+    100%{
+        transform: scale(0.97);
+        box-shadow: rgba(52, 172, 224, 0);
+    }
+}
